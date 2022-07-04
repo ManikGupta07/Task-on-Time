@@ -96,6 +96,12 @@ else {
 }
 
 addBtn.addEventListener("click", () => {
+    if (localStorage.getItem("notes") == null) {
+        notes = [];
+    }else{
+        let notesLocal = JSON.parse(localStorage.getItem("notes"));
+        notes = notesLocal
+    }
 
     let note = task.value;
     if (note !== '') {
